@@ -8,6 +8,16 @@ db.alternatives.delete_many({})
 db.criteria.delete_many({})
 db.evaluations.delete_many({})
 
+criteria = [
+    {"_id": 1, "name": "Price", "type": "min", "weight": 0.3},
+    {"_id": 2, "name": "Performance", "type": "max", "weight": 0.4},
+    {"_id": 3, "name": "Battery", "type": "max", "weight": 0.2},
+    {"_id": 4, "name": "Weight", "type": "min", "weight": 0.1}
+]
+
+db.criteria.insert_many(criteria)
+
+exit()
 
 alternatives = [
     {"_id": 1, "name": "Laptop A"},
@@ -23,16 +33,6 @@ alternatives = [
 ]
 
 db.alternatives.insert_many(alternatives)
-
-
-criteria = [
-    {"_id": 1, "name": "Price", "type": "min"},
-    {"_id": 2, "name": "Performance", "type": "max"},
-    {"_id": 3, "name": "Battery", "type": "max"},
-    {"_id": 4, "name": "Weight", "type": "min"}
-]
-
-db.criteria.insert_many(criteria)
 
 
 evaluations = [

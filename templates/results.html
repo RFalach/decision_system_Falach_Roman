@@ -1,0 +1,9 @@
+<h1>Results</h1>
+
+<ol>
+{% for r in result %}
+    <li>{{ r.name }} — {{ r.score }}</li>
+{% endfor %}
+</ol>
+
+<a href="/">Back</a>
